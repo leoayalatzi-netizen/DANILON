@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Calabozos y Dragones</title>
+<style>
+html,body{margin:0;height:100%;background:#05070d;overflow:hidden;font-family:system-ui,sans-serif}
+#c{width:100%;height:100%;display:block;outline:none;touch-action:none}
+#ui{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:8px;padding:8px;border-radius:16px;background:rgba(10,14,26,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
+#ui button{all:unset;cursor:pointer;padding:10px 16px;border-radius:10px;color:#cfd6f0;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+#ui button.on{background:rgba(255,255,255,.16);color:#fff}
+#hud{position:fixed;inset:0;pointer-events:none}
+#party{position:absolute;top:calc(env(safe-area-inset-top,0px) + 44px);left:12px;display:flex;flex-direction:column;gap:5px;width:150px}
+.card{position:relative;padding:5px 8px;border-radius:8px;background:rgba(10,14,26,.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);color:#dfe6ff;font-size:10px;letter-spacing:.04em;overflow:hidden}
+.card b{position:relative;display:block;font-weight:600}.card span{position:relative;font-size:9px;opacity:.7}
+.card i{position:absolute;left:0;bottom:0;height:3px;background:#7fd1ae}.card.enemigos i{background:#e0657a}.card.dead{opacity:.35}
+#log{position:absolute;right:12px;top:calc(env(safe-area-inset-top,0px) + 44px);width:46%;max-width:260px;color:#e9edff;font-size:11px;line-height:1.5;text-shadow:0 1px 3px #000;text-align:right}
+#fight{pointer-events:auto;position:absolute;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 82px);padding:10px 14px;border-radius:12px;background:rgba(10,14,26,.65);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12px;letter-spacing:.1em;cursor:pointer;backdrop-filter:blur(8px)}
+#ui:empty{display:none}
+#t{position:fixed;top:18px;left:22px;color:#fff;font-size:12px;letter-spacing:.3em;opacity:.8}
+</style></head><body>
+<div id="t">CALABOZOS Y DRAGONES</div>
+<canvas id="c"></canvas>
+<div id="boot" style="position:fixed;top:60px;left:22px;right:22px;color:#9fb0e8;font:13px monospace">Cargando motor 3D (unos 6 MB)… espera unos segundos.</div>
+<script>
+(function(){function show(m){var d=document.getElementById("err");if(!d){d=document.createElement("pre");d.id="err";d.style.cssText="position:fixed;top:100px;left:12px;right:12px;margin:0;padding:12px;background:rgba(120,0,20,.9);color:#fff;font:12px monospace;white-space:pre-wrap;border-radius:8px;z-index:9";document.body.appendChild(d)}d.textContent+=m+"\n"}
+addEventListener("error",function(e){var t=e.target;show(t&&t.src?"No cargó: "+t.src:"Error: "+e.message)},true);
+addEventListener("unhandledrejection",function(e){show("Error: "+((e.reason&&e.reason.message)||e.reason))});
+setTimeout(function(){if(!window.__ok)show("Sigue cargando… si pasan 30 s sin cambios, la conexión es lenta o el JS falló.")},12000);})();
+</script>
+
+<div id="ui"></div>
+<script type="module" src="/src/main.ts"></script>
+</body></html>

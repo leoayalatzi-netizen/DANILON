@@ -1,0 +1,3 @@
+Texturas y cielos (CC0): ambientCG.com — Snow015, Rock058, Ground109, EveningSkyHDRI046B/047B, NightSkyHDRI008. Kenney (kenney.nl) — Skyboxes, Fantasy Town Kit (CC0).
+Modelos propios (pinos, rocas, cristales, círculo rúnico, ruinas de dragón) generados proceduralmente en Blender (blender/*.py).
+Motor: Babylon.js (Apache-2.0). IA, perfilado y consejo: PriomGL (código del autor).

@@ -1,0 +1,22 @@
+{
+  "name": "priomgl-quantum",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/postbuild.mjs",
+    "typecheck": "tsc",
+    "preview": "vite preview",
+    "test": "node tests/core.test.mjs",
+    "assets": "bash blender/build_assets.sh"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^8.0.0",
+    "@babylonjs/havok": "^1.3.10",
+    "typescript": "^5.5.0",
+    "vite": "^5.4.0",
+    "@babylonjs/materials": "^8.0.0",
+    "@babylonjs/loaders": "^8.0.0"
+  }
+}
